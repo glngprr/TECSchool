@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #fefae0;
+}
+
+/* navbar */
+
+.navbar {
+    height: 60px;
+    display: flex;
+    padding: 0 2rem;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e7dbbc;
+    background-color: #faedcd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.logo svg {
+    width: 2rem;
+    height: 2rem;
+    color: #889461;
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #889461;
+
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+    color: #889461;
+}
+.nav-link:hover{
+    color: #666e4c;
+}
+.logo svg:hover{
+    color: #666e4c;
+}
+.logo a:hover{
+    color: #666e4c;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    color: #889461;
+}
+
+/* responsive navbar */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 150px;
+        height: calc(100vh - 60px);
+        background-color: #ccd5ae;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 2rem;
+        margin-right: 0;
+        transition: right 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.4rem 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo {
+        gap: 9rem;
+    }
+}
