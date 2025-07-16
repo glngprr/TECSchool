@@ -9,7 +9,6 @@ body {
 }
 
 /* navbar */
-
 .navbar {
     height: 60px;
     display: flex;
@@ -29,21 +28,14 @@ body {
     display: flex;
     text-decoration: none;
     align-items: center;
-    gap: 0.7rem;
-}
-
-.logo svg {
-    width: 2rem;
-    height: 2rem;
-    color: #889461;
-    cursor: pointer;
 }
 
 .logo a {
+    font-family: Trebuchet MS;
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: #889461;
-
 }
 
 .nav-menu{
@@ -59,7 +51,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.95rem;
     padding: 0.5rem 0;
     position: relative;
@@ -118,11 +110,5 @@ body {
     .nav-link {
         font-size: 1.1rem;
         padding: 0.4rem 0;
-    }
-}
-
-@media (max-width: 500px) {
-    .logo {
-        gap: 9rem;
     }
 }
