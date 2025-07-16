@@ -19,8 +19,9 @@ body {
     right: 0;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e7dbbc;
-    background-color: #faedcd;
+    position: fixed;
+    border-bottom: 1px solid #142a3b;
+    background-color: #18354C;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -35,7 +36,7 @@ body {
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: 800;
-    color: #889461;
+    color: #ffffff;
 }
 
 .nav-menu{
@@ -52,28 +53,30 @@ body {
 .nav-link {
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-family: Segoe UI;
     padding: 0.5rem 0;
     position: relative;
-    color: #889461;
+    color: #ffffff;
 }
-.nav-link:hover{
-    color: #666e4c;
-}
-.logo svg:hover{
-    color: #666e4c;
-}
-.logo a:hover{
-    color: #666e4c;
+.nav-link:hover,
+.logo a:hover {
+    color: #cacaca;
 }
 
 .mobile-menu-toggle {
+    height: 40px;
+    width: 40px;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
+    color: #ffffff;
     display: none;
-    color: #889461;
+}
+
+.hidden {
+    display: none;
 }
 
 /* responsive navbar */
@@ -81,34 +84,36 @@ body {
     .navbar {
         padding: 0 1rem;
     }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-
+    
     .nav-menu {
         position: fixed;
         top: 60px;
         right: -100%;
         width: 150px;
         height: calc(100vh - 60px);
-        background-color: #ccd5ae;
+        background-color: #18354C;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
         padding-top: 2rem;
+        padding-left: 1rem;
         margin-right: 0;
         transition: right 0.3s ease;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-
+    
     .nav-menu.active {
         right: 0;
     }
 
     .nav-link {
         font-size: 1.1rem;
-        padding: 0.4rem 0;
+        padding: 0.4rem auto 4rem 0;
     }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
 }
