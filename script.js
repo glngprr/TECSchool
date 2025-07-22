@@ -39,18 +39,14 @@ function toggleMajor(header) {
   const majorItem = header.parentElement;
   const isActive = majorItem.classList.contains("active");
 
-  // Close all other accordion items
-  document.querySelectorAll(".major-item.active").forEach((item) => {
-    if (item !== majorItem) {
-      item.classList.remove("active");
-    }
+  document.querySelectorAll(".major-item").forEach((item) => {
+    item.classList.remove("active");
+    item.querySelector(".expand-icon")?.classList.remove("active");
   });
 
-  // Toggle current item
-  if (isActive) {
-    majorItem.classList.remove("active");
-  } else {
+  if (!isActive) {
     majorItem.classList.add("active");
+    majorItem.querySelector(".expand-icon")?.classList.add("active");
   }
 }
 
