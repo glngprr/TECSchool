@@ -12,27 +12,94 @@ mobileToggle.addEventListener("click", () => {
 });
 
 // hero section
-let currentSlide = 0;
-const slides = document.querySelectorAll(".hero-slide");
-const totalSlides = slides.length;
+let currentSlideHero = 0;
+const slidesHero = document.querySelectorAll(".hero-slide");
+const totalSlidesHero = slidesHero.length;
 
 function showSlide(index) {
   // Reset all slides
-  slides.forEach((slide) => {
+  slidesHero.forEach((slide) => {
     slide.classList.remove("slide-active");
     slide.classList.add("slide-next");
   });
   // Set the new slide
-  slides[index].classList.remove("slide-next");
-  slides[index].classList.add("slide-active");
-  currentSlide = index;
+  slidesHero[index].classList.remove("slide-next");
+  slidesHero[index].classList.add("slide-active");
+  currentSlideHero = index;
 }
 
 // Auto-slide every 5 seconds
 setInterval(() => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
+  currentSlideHero = (currentSlideHero + 1) % totalSlidesHero;
+  showSlide(currentSlideHero);
 }, 5000);
+
+// achievement
+let currentSlide = 0;
+let isExpanded = false;
+let isAutoSliding = true;
+let autoSlideInterval;
+const totalSlides = 5;
+let itemsPerView = 3;
+
+// Initialize
+document.addEventListener("DOMContentLoaded", function () {
+  updateItemsPerView();
+  startAutoSlide();
+  updateDots();
+  window.addEventListener("resize", updateItemsPerView);
+});
+
+function updateItemsPerView() {
+  const width = window.innerWidth;
+  if (width <= 768) {
+    itemsPerView = 1;
+  } else if (width <= 1024) {
+    itemsPerView = 2;
+  } else {
+    itemsPerView = 3;
+  }
+  updateDots();
+}
+
+function getMaxSlides() {
+  return Math.max(0, totalSlides - itemsPerView);
+}
+
+function nextSlide() {
+  const maxSlides = getMaxSlides();
+  if (currentSlide < maxSlides) {
+    currentSlide++;
+  } else {
+    currentSlide = 0;
+  }
+  updateCarousel();
+  updateDots();
+}
+
+function prevSlide() {
+  const maxSlides = getMaxSlides();
+  if (currentSlide > 0) {
+    currentSlide--;
+  } else {
+    currentSlide = maxSlides;
+  }
+  updateCarousel();
+  updateDots();
+}
+
+function goToSlide(index) {
+  const maxSlides = getMaxSlides();
+  currentSlide = Math.min(index, maxSlides);
+  updateCarousel();
+  updateDots();
+}
+
+function updateCarousel() {
+  const wrapper = document.getElementById("carouselWrapper");
+  const slideWidth = 100 / itemsPerView;
+  wrapper.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+}
 
 // programs section
 function toggleMajor(header) {
