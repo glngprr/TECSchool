@@ -142,3 +142,18 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(item);
   });
 });
+
+// footer
+const socialLinks = document.querySelectorAll(".social-link");
+socialLinks.forEach((link, index) => {
+  link.style.animationDelay = `${index * 0.1}s`;
+
+  link.addEventListener("mouseenter", function () {
+    this.style.animation = "none";
+    this.style.transform = "translateY(-3px) scale(1.1)";
+  });
+
+  link.addEventListener("mouseleave", function () {
+    this.style.transform = "translateY(0) scale(1)";
+  });
+});
