@@ -36,18 +36,18 @@ setInterval(() => {
 
 // achievement
 let currentSlide = 0;
-let isExpanded = false;
 let isAutoSliding = true;
 let autoSlideInterval;
 const totalSlides = 5;
 let itemsPerView = 3;
 
-// Initialize
 document.addEventListener("DOMContentLoaded", function () {
   updateItemsPerView();
-  startAutoSlide();
-  updateDots();
-  window.addEventListener("resize", updateItemsPerView);
+  updateCarousel();
+  window.addEventListener("resize", () => {
+    updateItemsPerView();
+    updateCarousel(); // Perbarui posisi saat ukuran berubah
+  });
 });
 
 function updateItemsPerView() {
@@ -59,46 +59,31 @@ function updateItemsPerView() {
   } else {
     itemsPerView = 3;
   }
-  updateDots();
-}
-
-function getMaxSlides() {
-  return Math.max(0, totalSlides - itemsPerView);
 }
 
 function nextSlide() {
-  const maxSlides = getMaxSlides();
-  if (currentSlide < maxSlides) {
+  if (currentSlide < totalSlides - itemsPerView) {
     currentSlide++;
   } else {
     currentSlide = 0;
   }
   updateCarousel();
-  updateDots();
 }
 
 function prevSlide() {
-  const maxSlides = getMaxSlides();
   if (currentSlide > 0) {
     currentSlide--;
   } else {
-    currentSlide = maxSlides;
+    currentSlide = totalSlides - itemsPerView;
   }
   updateCarousel();
-  updateDots();
-}
-
-function goToSlide(index) {
-  const maxSlides = getMaxSlides();
-  currentSlide = Math.min(index, maxSlides);
-  updateCarousel();
-  updateDots();
 }
 
 function updateCarousel() {
   const wrapper = document.getElementById("carouselWrapper");
   const slideWidth = 100 / itemsPerView;
-  wrapper.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+  const offset = (slideWidth / 100) * currentSlide * -100;
+  wrapper.style.transform = `translateX(${offset}%)`;
 }
 
 // programs section

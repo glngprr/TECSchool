@@ -442,12 +442,11 @@ body {
 }
 
 .carousel-slide {
-  flex: 0 0 calc(100% / 3); /* default 3 item */
+  min-width: calc(100% / 3); /* Akan di-overwrite via JS */
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  box-sizing: border-box;
 }
 
 .achievement-card {
@@ -562,13 +561,12 @@ body {
 
 @media (max-width: 1024px) {
   .carousel-slide {
-    flex: 0 0 calc(100% / 2); /* tablet: 2 item */
+    min-width: calc(100% / 2);
   }
 }
-
 @media (max-width: 768px) {
   .carousel-slide {
-    flex: 0 0 100%; /* mobile: 1 item */
+    min-width: 100%;
   }
 }
 
