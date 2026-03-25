@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tec High School</title>
+    <title>TECSchool</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -702,9 +702,188 @@
     </section>
 
     <!-- Facilities -->
-    <section class="facilites-section"></section>
+    <section class="facilities-section" id="facilities">
+      <div class="facility">
+        <div class="facility-image">
+          <img src="img/facilites1.jpg" alt="Modern Classroom" />
+        </div>
+        <div class="facility-text">
+          <h3>Modern Classrooms</h3>
+          <p>
+            Smart classrooms with digital boards and high-speed internet for
+            immersive learning experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="facility reverse">
+        <div class="facility-text text-reverse">
+          <h3>Tech Labs & Equipment</h3>
+          <p>
+            Equipped with high-performance computers, VR kits, Arduino sets, and
+            networking tools for hands-on learning.
+          </p>
+        </div>
+        <div class="facility-image">
+          <img src="img/facilites4.jpg" alt="Tech Lab" />
+        </div>
+      </div>
+
+      <div class="facility">
+        <div class="facility-image">
+          <img src="img/facilites3.jpg" alt="Creative Lounge" />
+        </div>
+        <div class="facility-text">
+          <h3>Creative Lounge & Study Hub</h3>
+          <p>
+            Comfortable spaces for collaboration, self-study, and innovation —
+            because creativity needs the right environment.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact -->
+    <section class="contact-section">
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <h4>LOCATION</h4>
+
+            <div class="contact-details">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-map-pin"
+              >
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <p>
+                Jl. K. H. Syahdan No. 9,<br />
+                Kemanggisan, Palmerah Jakarta<br />
+                11480 Indonesia
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <h4>CONTACT US</h4>
+
+            <div class="contact-details">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-phone"
+              >
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                />
+              </svg>
+              <p>
+                <strong>Phone</strong><br />
+                TECSchool Support<br />
+                0812 345 67 89<br />
+                62812 34 567890 (WhatsApp)
+              </p>
+            </div>
+
+            <div class="contact-details">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-mail"
+              >
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+              </svg>
+
+              <p>
+                <strong>Email</strong><br />
+                info@tecschool.ac.id<br />
+                pendaftaran@tecschool.ac.id
+              </p>
+            </div>
+          </div>
+
+          <div class="section-img">
+            <img src="img/elon-removebg.png" alt="" />
+          </div>
+        </div>
+
+        <div class="contact-form fade-in">
+          <h3>Kirim Pesan</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Nama Depan</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Nama Belakang</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="interest">Minat Program</label>
+              <select id="interest" name="interest" required>
+                <option value="">Pilih Program</option>
+                <option value="tkj">Software Engineering</option>
+                <option value="rpl">Artificial Intelligence</option>
+                <option value="mm">Cybersecurity</option>
+                <option value="tei">Data Science</option>
+                <option value="tkr">Game Development</option>
+                <option value="tkr">Digital Media & Animation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Pesan</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tuliskan pertanyaan atau pesan Anda..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
